@@ -13,8 +13,8 @@ app.listen(process.env.PORT || 2000, () => {
 
 app.get('/', (req, res) => {
 	res.json({
-		'audio': '/audio/id=value',
-		'video': '/video/id=value'
+		'audio': 'https://youtube-fetcher.herokuapp.com/audio/id=value',
+		'video': 'https://youtube-fetcher.herokuapp.com/video/id=value'
 	});
 });
 
