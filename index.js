@@ -6,8 +6,9 @@ const youtubedl = require('youtube-dl');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.listen(2000, () => {
-	console.log('listening on 2000.');
+app.listen(process.env.PORT || 2000, () => {
+	console.log('Server started.');
+	//console.log("Express server listening on port %d in %s mode", address().port, app.settings.env);
 });
 
 app.get('/', (req, res) => {
