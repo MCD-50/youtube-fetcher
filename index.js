@@ -10,6 +10,13 @@ app.listen(2007, () => {
 	console.log('listening on 2000.');
 });
 
+app.get('/', (req, res) => {
+	res.json({
+		'audio': '/audio/id=value',
+		'video': '/video/id=value'
+	});
+});
+
 app.get('/video/:id', (req, res) => {
 	try {
 		const id = req.params.id.split('=')[1];
