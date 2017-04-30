@@ -8,7 +8,6 @@ app.use(bodyParser.json());
 
 app.listen(process.env.PORT || 2000, () => {
 	console.log('Server started.');
-	//console.log("Express server listening on port %d in %s mode", address().port, app.settings.env);
 });
 
 app.get('/', (req, res) => {
@@ -22,7 +21,8 @@ app.get('/video/:id', (req, res) => {
 	try {
 		const id = req.params.id.split('=')[1];
 		const url = "https://www.youtube.com/watch?v=" + id.toString();
-		youtubedl.getInfo(url, [], { maxBuffer: 1000 * 1024 }, (e, i) => {
+		//['--format=18'], { cwd: __dirname, maxBuffer: 1000*1024 }
+		youtubedl.getInfo(url, ['--format=18'], { cwd: __dirname, maxBuffer: 1000 * 1024 }, (e, i) => {
 			if (e)
 				res.json({ message: e, error: true });
 			else
@@ -37,7 +37,7 @@ app.get('/audio/:id', (req, res) => {
 	try {
 		const id = req.params.id.split('=')[1];
 		const url = "https://www.youtube.com/watch?v=" + id.toString();
-		youtubedl.getInfo(url, [], { maxBuffer: 1000 * 1024 }, (e, i) => {
+		youtubedl.getInfo(url, ['--format=18'], { cwd: __dirname, maxBuffer: 1000 * 1024 }, (e, i) => {
 			if (e)
 				res.json({ message: e, error: true });
 			else {

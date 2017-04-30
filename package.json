@@ -5,7 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"dev": "nodemon index.js",
-		"start":"node index.js",
+		"start": "node index.js",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"repository": {
@@ -27,12 +27,12 @@
 	"dependencies": {
 		"body-parser": "^1.17.1",
 		"express": "^4.15.2",
-		"youtube-dl": "^1.11.1"
+		"youtube-dl": "git://github.com/fent/node-youtube-dl.git#master"
 	},
 	"devDependencies": {
 		"nodemon": "^1.11.0"
 	},
 	"engines": {
-    "node": "6.0.0"
-  }
+		"node": "6.0.0"
+	}
 }
