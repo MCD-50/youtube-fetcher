@@ -25,8 +25,10 @@ app.get('/video/:id', (req, res) => {
 		youtubedl.getInfo(url, ['--format=18'], { cwd: __dirname, maxBuffer: 1000 * 1024 }, (e, i) => {
 			if (e)
 				res.json({ message: e, error: true });
-			else
-				res.json({ message: i, error: false });
+			else{
+				const videos = i.formats.filter((xx) => xx.format_note != undefined && !xx.format_note.includes('audio') && xx.ext.includes('mp4'))
+				res.json({ message: videos, error: false });
+			}
 		});
 	} catch (e) {
 		res.json({ message: 'Something went wrong.', error: true })
