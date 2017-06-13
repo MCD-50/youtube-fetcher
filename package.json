@@ -1,38 +1,39 @@
 {
-	"name": "youtube",
-	"version": "1.0.0",
-	"description": "Simple server for fetching video info from video url",
-	"main": "index.js",
-	"scripts": {
-		"dev": "nodemon index.js",
-		"start": "node index.js",
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/mcd-50/youtube-fetcher.git"
-	},
-	"keywords": [
-		"Fetch",
-		"youtube",
-		"video",
-		"info"
-	],
-	"author": "ayush shukla",
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/mcd-50/youtube-fetcher/issues"
-	},
-	"homepage": "https://github.com/mcd-50/youtube-fetcher#readme",
-	"dependencies": {
-		"body-parser": "^1.17.1",
-		"express": "^4.15.2",
-		"youtube-dl": "git://github.com/fent/node-youtube-dl.git#master"
-	},
-	"devDependencies": {
-		"nodemon": "^1.11.0"
-	},
-	"engines": {
-		"node": "6.0.0"
-	}
+  "name": "youtube",
+  "version": "1.0.0",
+  "description": "Simple server for fetching video info from video url",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mcd-50/youtube-fetcher.git"
+  },
+  "keywords": [
+    "Fetch",
+    "youtube",
+    "video",
+    "info"
+  ],
+  "author": "ayush shukla",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mcd-50/youtube-fetcher/issues"
+  },
+  "homepage": "https://github.com/mcd-50/youtube-fetcher#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "request": "^2.81.0",
+    "youtube-dl": "git://github.com/fent/node-youtube-dl.git#master"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  },
+  "engines": {
+    "node": "6.0.0"
+  }
 }

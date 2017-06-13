@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const youtubedl = require('youtube-dl');
+const request = require('request');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -47,6 +48,23 @@ app.get('/audio/:id', (req, res) => {
 				res.json({ message: audios, error: false });
 			}
 		});
+	} catch (e) {
+		res.json({ message: 'Something went wrong.', error: true })
+	}
+});
+
+
+app.get('/sample/:artist', (req, res)=>{
+	try {
+		const id = req.params.artist.split('=')[1];
+		const url = `http://api.deezer.com/search?q=${id}&index=1&limit=10`
+		request(url, (e, r)=>{
+			if(r){
+				console.log(r);
+			}else{
+				console.log(e);
+			}
+		})
 	} catch (e) {
 		res.json({ message: 'Something went wrong.', error: true })
 	}
