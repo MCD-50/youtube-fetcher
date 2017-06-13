@@ -27,7 +27,6 @@
   "dependencies": {
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
-    "request": "^2.81.0",
     "youtube-dl": "git://github.com/fent/node-youtube-dl.git#master"
   },
   "devDependencies": {

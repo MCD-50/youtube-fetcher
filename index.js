@@ -52,20 +52,3 @@ app.get('/audio/:id', (req, res) => {
 		res.json({ message: 'Something went wrong.', error: true })
 	}
 });
-
-
-app.get('/sample/:artist', (req, res)=>{
-	try {
-		const id = req.params.artist.split('=')[1];
-		const url = `http://api.deezer.com/search?q=${id}&index=1&limit=10`
-		request(url, (e, r)=>{
-			if(r && r.body){
-				res.json({ message: r.body, error: true })
-			}else{
-				res.json({ message: 'Something went wrong.', error: true })
-			}
-		})
-	} catch (e) {
-		res.json({ message: 'Something went wrong.', error: true })
-	}
-});
