@@ -59,9 +59,9 @@ app.get('/sample/:artist', (req, res)=>{
 		const url = `http://api.deezer.com/search/artist?q=${id}&index=1&limit=10`
 		request(url, (e, r)=>{
 			if(r){
-				console.log(r)
+				res.json({ message: r, error: true })
 			}else{
-				console.log(e);
+				res.json({ message: 'Something went wrong.', error: true })
 			}
 		})
 	} catch (e) {
@@ -76,10 +76,9 @@ app.get('/sample/:album', (req, res)=>{
 		const url = `http://api.deezer.com/search/album?q=${id}&index=1&limit=10`
 		request(url, (e, r)=>{
 			if(r){
-				
-				console.log(r)
+				res.json({ message: r, error: true })
 			}else{
-				console.log(e);
+				res.json({ message: 'Something went wrong.', error: true })
 			}
 		})
 	} catch (e) {
@@ -94,9 +93,9 @@ app.get('/sample/:track', (req, res)=>{
 		const url = `http://api.deezer.com/search?q=${id}&index=1&limit=10`
 		request(url, (e, r)=>{
 			if(r){
-				console.log(r);
+				res.json({ message: r, error: true })
 			}else{
-				console.log(e);
+				res.json({ message: 'Something went wrong.', error: true })
 			}
 		})
 	} catch (e) {
