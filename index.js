@@ -56,10 +56,44 @@ app.get('/audio/:id', (req, res) => {
 app.get('/sample/:artist', (req, res)=>{
 	try {
 		const id = req.params.artist.split('=')[1];
+		const url = `http://api.deezer.com/search/artist?q=${id}&index=1&limit=10`
+		request(url, (e, r)=>{
+			if(r){
+				console.log(JSON.parse(r))
+			}else{
+				console.log(e);
+			}
+		})
+	} catch (e) {
+		res.json({ message: 'Something went wrong.', error: true })
+	}
+  }); 
+
+
+app.get('/sample/:album', (req, res)=>{
+	try {
+		const id = req.params.album.split('=')[1];
+		const url = `http://api.deezer.com/search/album?q=${id}&index=1&limit=10`
+		request(url, (e, r)=>{
+			if(r){
+				console.log(JSON.parse(r))
+			}else{
+				console.log(e);
+			}
+		})
+	} catch (e) {
+		res.json({ message: 'Something went wrong.', error: true })
+	}
+  }); 
+
+
+app.get('/sample/:track', (req, res)=>{
+	try {
+		const id = req.params.track.split('=')[1];
 		const url = `http://api.deezer.com/search?q=${id}&index=1&limit=10`
 		request(url, (e, r)=>{
 			if(r){
-				console.log(r);
+				console.log(JSON.parse(r));
 			}else{
 				console.log(e);
 			}
