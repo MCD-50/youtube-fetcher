@@ -53,7 +53,7 @@ app.get('/audio/:id', (req, res) => {
 	}
 });
 
-app.get('/sample/:artist', (req, res)=>{
+app.get('/ar/:artist', (req, res)=>{
 	try {
 		const id = req.params.artist.split('=')[1];
 		const url = `http://api.deezer.com/search/artist?q=maroon 5&index=0&limit=10`
@@ -70,7 +70,7 @@ app.get('/sample/:artist', (req, res)=>{
   }); 
 
 
-app.get('/sample/:album', (req, res)=>{
+app.get('/al/:album', (req, res)=>{
 	try {
 		const id = req.params.album.split('=')[1];
 		const url = `http://api.deezer.com/search/album?q=v&index=0&limit=10`
@@ -87,7 +87,7 @@ app.get('/sample/:album', (req, res)=>{
   }); 
 
 
-app.get('/sample/:track', (req, res)=>{
+app.get('/t/:track', (req, res)=>{
 	try {
 		const id = req.params.track.split('=')[1];
 		const url = `http://api.deezer.com/search?q=maps&index=0&limit=10`
