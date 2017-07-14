@@ -12,6 +12,10 @@
     "type": "git",
     "url": "git+https://github.com/mcd-50/youtube-fetcher.git"
   },
+  engines:{
+    "node":"^6.11.1",
+    "npm":"^3.10.10"
+  },
   "keywords": [
     "Fetch",
     "youtube",
